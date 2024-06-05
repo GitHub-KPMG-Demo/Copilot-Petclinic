@@ -80,6 +80,16 @@ public class Owner extends Person {
 		this.city = city;
 	}
 
+	/**
+	 * This method is used to add multiple pets to the Owner's list of pets.
+	 * @param pets The list of pets to add
+	 */
+	public void addPets(List<Pet> pets) {
+		for (Pet pet : pets) {
+			addPet(pet);
+		}
+	}
+
 	public String getTelephone() {
 		return this.telephone;
 	}

@@ -82,3 +82,5 @@ public class Pet extends NamedEntity {
 	}
 
 }
+
+##end of snippet##
