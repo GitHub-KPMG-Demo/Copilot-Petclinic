@@ -32,6 +32,9 @@ import jakarta.persistence.OrderBy;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
+import java.util.List;
+import java.util.stream.Collectors;
+
 
 /**
  * Simple JavaBean domain object representing an owner.
@@ -106,6 +109,12 @@ public class Owner extends Person {
 		if (pet.isNew()) {
 			getPets().add(pet);
 		}
+    public List<String> getPetTypes() {
+    return this.pets.stream()
+        .map(pet -> pet.getType().getName())
+        .collect(Collectors.toList());
+		}
+	
 	}
 
 	/**
